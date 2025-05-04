@@ -13,9 +13,9 @@ const { verifyToken } = require('../middleware/auth');
 router.get('/public', getPublicMeals);
 
 // Authenticated user routes
-router.get('/', verifyToken, getMeals);              
+router.get('/getMyMeals', verifyToken, getMeals);              
 router.get('/:id', verifyToken, getMeal);           
-router.post('/', verifyToken, createMeal);         
+router.post('/addMeal', verifyToken, createMeal);         
 router.put('/:id', verifyToken, updateMeal);         
 router.delete('/:id', verifyToken, deleteMeal);     
 

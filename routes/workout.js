@@ -9,11 +9,11 @@ const {
   getPublicWorkouts
 } = require('../controllers/workout');
 
-router.get('/', verifyToken, getWorkouts);
-router.post('/', verifyToken, createWorkout);
+router.get('/getMyWorkouts', verifyToken, getWorkouts);
+router.post('/addWorkout', verifyToken, createWorkout);
 router.get('/:id', verifyToken, getWorkout);
 router.put('/:id', verifyToken, updateWorkout);
 router.delete('/:id', verifyToken, deleteWorkout);
-router.get('/public', getPublicWorkouts); // Public route
+router.get('/publicWorkouts', getPublicWorkouts); // Public route
 
 module.exports = router;
